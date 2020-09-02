@@ -3,6 +3,8 @@ name: Refresh Resume
 on:
   push:
     branches: [ dev ]
+    paths:
+    - 'suhas_hegde/**'
 
 jobs:
   build:
