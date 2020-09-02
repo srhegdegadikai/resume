@@ -1,0 +1,29 @@
+name: Refresh Resume
+
+on:
+  push:
+    branches: [ dev ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    container: rocker/verse
+
+    steps:
+    - uses: actions/checkout@v2
+    
+    - name: Install vitae
+      id: install_vitae
+      run: Rscript -e 'install.packages("vitae")'
+    - name: Render Resume
+      id: render_resume_pdf
+      run: Rscript -e 'rmarkdown::render("suhas_hegde/suhas_hegde.Rmd")'
+    - name: Commit pdf 
+      id: commit_pdf
+      run: |
+        mv suhas_hegde/suhas_hegde.pdf suhas_hegde_resume.pdf
+        git config user.name "srhegdegadikai"
+        git config user.email "srhegdegadikai@gmail.com"
+        git add  suhas_hegde_resume.pdf || echo "No changes to commit"
+        git commit suhas_hegde_resume.pdf -m "Auto re-build resume.pdf file" || echo "No changes to commit"
+        git push origin || echo "No changes to commit"
