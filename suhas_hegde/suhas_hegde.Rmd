@@ -6,9 +6,11 @@ address: "Rakuten Rewards, San Mateo"
 phone: +1 301 338 3994
 email: "srhegdegadikai@gmail.com"
 github: srhegdegadikai
-linkedin: "suhas-hegde-428a19131"
+linkedin: srhegdegadikai
 date: "`r format(Sys.time(), '%B %Y')`"
-output: vitae::awesomecv
+output: 
+  vitae::moderncv:
+    theme: classic
 ---
 
 ```{r setup, include=FALSE}
@@ -21,54 +23,61 @@ library(tibble)
 
 ```{r work}
 tribble(
-  ~ role, ~ company, ~ loc, ~ dates, ~ details,
-  "Data Engineer", "Rakuten Rewards (formerly Ebates)", "San Mateo", "Jul 2018 - Present", "Design and implementation of cloud based petabyte scale Data-warehouse using Snowflake, Kubernetes & Argo-workflows",
+  ~ role, ~ company, ~ loc, ~ dates, 
+  "Data Engineer", "Rakuten Rewards (formerly Ebates)", "San Mateo", "Jul 2018 - Present"
 ) %>% 
-  detailed_entries(role, dates, company, loc, details)
+  detailed_entries(role, dates, company, loc)
+
+tribble(
+  ~ work_details,
+  "Design and implementation of cloud based Petabyte scale Data-warehouse using Snowflake & Kubernetes",
+  "Migration of batch-jobs/workloads(> 800) from a data-center to Kubernetes workloads running on AWS-EKS",
+  "Implementation of Apache-Spark(distributed computing) workloads on Kubernetes and exploration of multicloud Spark workloads using GKE+DataProc & EKS",
+  "Automation of Snowflake administrative tasks using Python-scripts & Github-actions",
+  "Internal APIs to assist data-engineers with Kubernetes deployments, Docker build flows, log-access etc.",
+  "On-going migration of all infra automation to Github-actions from Jenkins "
+) %>%
+  detailed_entries(why=work_details)
+```
+
+
+# Skills
+
+## Programming/Scripting - 
+
+```{r programming}
+tribble(
+  ~ language, 
+  "Python - Batch jobs, internal APIs & scripting for infra-automation",
+  "SQL - Analytics, Data-warehouse maintenance",
+  "R - Analytics, reporting",
+  "Shell scripting"
+) %>% 
+  detailed_entries(why=language)
+```
+
+## Frameworks/Services - 
+
+```{r tech}
+tribble(
+  ~ tech, 
+  "Kubernetes & Docker - Unification of workloads using Kubernetes Cronjobs and K8s-Operators such as Spark-Operator & Argo-Workflows",
+  "Helm - Package management for K8s",
+  "AWS Services - EKS, EMR, ECR, ElasticCache etc.",
+  "Snowflake - Unified data-warehouse storing streaming data from Kafka & batch data from Postgres, MySQL databases and various internal/external APIs"
+) %>% 
+  detailed_entries(why=tech)
 ```
 
 
 # Education
 
 ```{r education}
-library(tibble)
 tribble(
   ~ Degree, ~ Year, ~ Institution, ~ Where,
-  "Informal studies", "1889-91", "Flying University", "Warsaw, Poland",
-  "Master of Physics", "1893", "Sorbonne Université", "Paris, France",
-  "Master of Mathematics", "1894", "Sorbonne Université", "Paris, France"
+  "Master of Science", "2018", "Frostburg State University", "Maryland, USA",
+  "Bachelor of Commerce", "2016", "Karnatak University", "Dharwad, India"
 ) %>% 
   detailed_entries(Degree, Year, Institution, Where)
-```
-
-# Nobel Prizes
-
-```{r}
-tribble(
-  ~Year, ~Type, ~Desc,
-  1903, "Physics", "Awarded for her work on radioactivity with Pierre Curie and Henri Becquerel",
-  1911, "Chemistry", "Awarded for the discovery of radium and polonium"
-) %>% 
-  brief_entries(
-    glue::glue("Nobel Prize in {Type}"),
-    Year, 
-    Desc
-  )
-```
-
-# Publications
-
-```{r}
-library(dplyr)
-scholar::get_publications("EmD_lTEAAAAJ&EmD_lTEAAAAJ&") %>% 
-  filter(cites > 30) %>% 
-  distinct(title, .keep_all = TRUE) %>%
-  transmute(bibtype = "Article", author = as.character(author),
-            title = as.character(title),
-            journaltitle = as.character(journal), year, key = row_number()) %>% 
-  RefManageR::as.BibEntry() %>% 
-  RefManageR::WriteBib("curie.bib")
-
-bibliography_entries("curie.bib")
 ```
 
