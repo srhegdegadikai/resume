@@ -41,4 +41,7 @@ vignettes/*.pdf
 # Rstudio project files
 *.Rproj
 *.log
+
+# LaTex build files
 *.bib
+*.sty
