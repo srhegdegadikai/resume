@@ -8,9 +8,9 @@ email: "srhegdegadikai@gmail.com"
 github: srhegdegadikai
 linkedin: srhegdegadikai
 date: "`r format(Sys.time(), '%B %Y')`"
+aboutme: "Focused on anything & everything related to data & data-systems, cloud computing & analytics. Been writing & deploying production code related to data for 3+ years in the affiliate marketing domain"
 output: 
-  vitae::moderncv:
-    theme: classic
+  vitae::hyndman
 ---
 
 ```{r setup, include=FALSE}
@@ -24,7 +24,7 @@ library(tibble)
 ```{r work}
 tribble(
   ~ role, ~ company, ~ loc, ~ dates, 
-  "Data Engineer", "Rakuten Rewards (formerly Ebates)", "San Mateo", "Jul 2018 - Present"
+  "Senior Data Engineer", "Rakuten Rewards (formerly Ebates)", "San Mateo", "Jul 2018 - Present"
 ) %>% 
   detailed_entries(role, dates, company, loc)
 
@@ -34,9 +34,8 @@ tribble(
   "Migration of batch-jobs/workloads(> 800) from a data-center to Kubernetes workloads running on AWS-EKS",
   "Implementation of Apache-Spark(distributed computing) workloads on Kubernetes using spark-operator framework",
   "AWS-Cloud cost optimization by using Spot instances for Apache-Spark production workloads on EKS",
-  "Adoption of server-less computing(AWS-Lambda) for specialized applications such as data-exports etc."
+  "Adoption of server-less computing using AWS-Lambda for data-exports to partners(from AWS -> GCP/Azure)",
   "Automation of Snowflake administrative tasks using Python-scripts & Github-actions",
-  "Internal APIs to assist data-engineers with Kubernetes deployments, Docker build flows, log-access etc.",
   "Complete migration of all infra automation to Github-actions from Jenkins"
 ) %>%
   detailed_entries(why=work_details)
@@ -63,10 +62,9 @@ tribble(
 ```{r tech}
 tribble(
   ~ tech, 
-  "Kubernetes & Docker - Unification of workloads using Kubernetes Cronjobs and K8s-Operators such as Spark-Operator & Argo-Workflows",
-  "Helm - Package management for K8s",
+  "Kubernetes, Docker & Helm - Batch workloads using  K8s-Cronjobs and K8s-Operators(Spark-Operator & Argo-Workflows)",
   "AWS Services - EKS, EMR, ECR, Lambda etc.",
-  "Snowflake - Unified data-warehouse storing streaming data from Kafka & batch data from Postgres, MySQL databases and various internal/external APIs"
+  "Snowflake - Data-warehouse storing streaming data, batch data from RDBMS and various internal/external APIs"
 ) %>% 
   detailed_entries(why=tech)
 ```
