@@ -30,12 +30,14 @@ tribble(
 
 tribble(
   ~ work_details,
-  "Design and implementation of cloud based Petabyte scale Data-warehouse using Snowflake & Kubernetes",
+  "Design and implementation of cloud based Petabyte scale Data-warehouse using Snowflake, AWS & Kubernetes(EKS)",
   "Migration of batch-jobs/workloads(> 800) from a data-center to Kubernetes workloads running on AWS-EKS",
-  "Implementation of Apache-Spark(distributed computing) workloads on Kubernetes and exploration of multicloud Spark workloads using GKE+DataProc & EKS",
+  "Implementation of Apache-Spark(distributed computing) workloads on Kubernetes using spark-operator framework",
+  "AWS-Cloud cost optimization by using Spot instances for Apache-Spark production workloads on EKS",
+  "Adoption of server-less computing(AWS-Lambda) for specialized applications such as data-exports etc."
   "Automation of Snowflake administrative tasks using Python-scripts & Github-actions",
   "Internal APIs to assist data-engineers with Kubernetes deployments, Docker build flows, log-access etc.",
-  "On-going migration of all infra automation to Github-actions from Jenkins "
+  "Complete migration of all infra automation to Github-actions from Jenkins"
 ) %>%
   detailed_entries(why=work_details)
 ```
@@ -63,7 +65,7 @@ tribble(
   ~ tech, 
   "Kubernetes & Docker - Unification of workloads using Kubernetes Cronjobs and K8s-Operators such as Spark-Operator & Argo-Workflows",
   "Helm - Package management for K8s",
-  "AWS Services - EKS, EMR, ECR, ElasticCache etc.",
+  "AWS Services - EKS, EMR, ECR, Lambda etc.",
   "Snowflake - Unified data-warehouse storing streaming data from Kafka & batch data from Postgres, MySQL databases and various internal/external APIs"
 ) %>% 
   detailed_entries(why=tech)
