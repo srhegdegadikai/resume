@@ -8,8 +8,9 @@ email: "srhegdegadikai@gmail.com"
 github: srhegdegadikai
 linkedin: srhegdegadikai
 date: "`r format(Sys.time(), '%B %Y')`"
+aboutme: "Focused on anything & everything related to data & data-systems, cloud computing & analytics. Been writing & deploying production code related to data for 3+ years in the affiliate marketing domain"
 output: 
-  vitae::moderncv
+  vitae::hyndman
 ---
 
 ```{r setup, include=FALSE}
@@ -33,7 +34,7 @@ tribble(
   "Migration of batch-jobs/workloads(> 800) from a data-center to Kubernetes workloads running on AWS-EKS",
   "Implementation of Apache-Spark(distributed computing) workloads on Kubernetes using spark-operator framework",
   "AWS-Cloud cost optimization by using Spot instances for Apache-Spark production workloads on EKS",
-  "Adoption of server-less computing(AWS-Lambda) for specialized applications such as data-exports etc.",
+  "Adoption of server-less computing using AWS-Lambda for data-exports to partners(from AWS -> GCP/Azure)",
   "Automation of Snowflake administrative tasks using Python-scripts & Github-actions",
   "Complete migration of all infra automation to Github-actions from Jenkins"
 ) %>%
