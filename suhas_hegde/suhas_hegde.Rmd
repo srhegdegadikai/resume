@@ -9,8 +9,7 @@ github: srhegdegadikai
 linkedin: srhegdegadikai
 date: "`r format(Sys.time(), '%B %Y')`"
 output: 
-  vitae::moderncv:
-    theme: classic
+  vitae::hyndman
 ---
 
 ```{r setup, include=FALSE}
