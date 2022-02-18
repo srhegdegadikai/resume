@@ -9,7 +9,7 @@ github: srhegdegadikai
 linkedin: srhegdegadikai
 date: "`r format(Sys.time(), '%B %Y')`"
 output: 
-  vitae::hyndman
+  vitae::moderncv
 ---
 
 ```{r setup, include=FALSE}
@@ -23,7 +23,7 @@ library(tibble)
 ```{r work}
 tribble(
   ~ role, ~ company, ~ loc, ~ dates, 
-  "Data Engineer", "Rakuten Rewards (formerly Ebates)", "San Mateo", "Jul 2018 - Present"
+  "Senior Data Engineer", "Rakuten Rewards (formerly Ebates)", "San Mateo", "Jul 2018 - Present"
 ) %>% 
   detailed_entries(role, dates, company, loc)
 
@@ -35,7 +35,6 @@ tribble(
   "AWS-Cloud cost optimization by using Spot instances for Apache-Spark production workloads on EKS",
   "Adoption of server-less computing(AWS-Lambda) for specialized applications such as data-exports etc.",
   "Automation of Snowflake administrative tasks using Python-scripts & Github-actions",
-  "Internal APIs to assist data-engineers with Kubernetes deployments, Docker build flows, log-access etc.",
   "Complete migration of all infra automation to Github-actions from Jenkins"
 ) %>%
   detailed_entries(why=work_details)
@@ -62,10 +61,9 @@ tribble(
 ```{r tech}
 tribble(
   ~ tech, 
-  "Kubernetes & Docker - Unification of workloads using Kubernetes Cronjobs and K8s-Operators such as Spark-Operator & Argo-Workflows",
-  "Helm - Package management for K8s",
+  "Kubernetes, Docker & Helm - Batch workloads using  K8s-Cronjobs and K8s-Operators(Spark-Operator & Argo-Workflows)",
   "AWS Services - EKS, EMR, ECR, Lambda etc.",
-  "Snowflake - Unified data-warehouse storing streaming data from Kafka & batch data from Postgres, MySQL databases and various internal/external APIs"
+  "Snowflake - Data-warehouse storing streaming data, batch data from RDBMS and various internal/external APIs"
 ) %>% 
   detailed_entries(why=tech)
 ```
