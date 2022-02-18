@@ -34,7 +34,7 @@ tribble(
   "Migration of batch-jobs/workloads(> 800) from a data-center to Kubernetes workloads running on AWS-EKS",
   "Implementation of Apache-Spark(distributed computing) workloads on Kubernetes using spark-operator framework",
   "AWS-Cloud cost optimization by using Spot instances for Apache-Spark production workloads on EKS",
-  "Adoption of server-less computing(AWS-Lambda) for specialized applications such as data-exports etc."
+  "Adoption of server-less computing(AWS-Lambda) for specialized applications such as data-exports etc.",
   "Automation of Snowflake administrative tasks using Python-scripts & Github-actions",
   "Internal APIs to assist data-engineers with Kubernetes deployments, Docker build flows, log-access etc.",
   "Complete migration of all infra automation to Github-actions from Jenkins"
