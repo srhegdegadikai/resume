@@ -1,7 +1,7 @@
 ---
 name: Suhas
 surname: Hegde
-position: "Data Engineer"
+position: "Senior Data Engineer"
 address: "Rakuten Rewards, San Mateo"
 phone: +1 301 338 3994
 email: "srhegdegadikai@gmail.com"
