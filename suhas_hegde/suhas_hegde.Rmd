@@ -3,12 +3,12 @@ name: Suhas
 surname: Hegde
 position: "Senior Data Engineer"
 address: "Rakuten Rewards, San Mateo"
-phone: +1 301 338 3994
+phone: +1 470 509 4588
 email: "srhegdegadikai@gmail.com"
 github: srhegdegadikai
 linkedin: srhegdegadikai
 date: "`r format(Sys.time(), '%B %Y')`"
-aboutme: "Focused on anything & everything related to data & data-systems, cloud computing & analytics. Been writing & deploying production code related to data for 3+ years in the affiliate marketing domain"
+aboutme: "Focused on anything & everything related to data & data-systems, cloud computing & analytics. Been writing & deploying production code related to data for 4+ years in the affiliate marketing domain"
 output: 
   vitae::hyndman
 ---
